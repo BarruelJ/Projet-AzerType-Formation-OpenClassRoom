@@ -11,11 +11,10 @@ function ecritureValue (input) {
     input.value = ""
 }
 
-function afficherProposition(listMots, i) {
+function afficherProposition(proposition) {
 
     let div = document.querySelector(".motProposition")
-    div.innerHTML = `<p> ${listMots[i]} </p>`
-
+    div.innerText = proposition
 }
 
 function lancerJeu() {
@@ -25,17 +24,16 @@ function lancerJeu() {
     let total = 0
     let inputEcriture = document.getElementById("inputEcriture")
     
-    afficherProposition(listMots, i)
-
+    afficherProposition(listMots[i])
     let boutonValider = document.querySelector(".reponseUser button")
     boutonValider.addEventListener("click", () => {
         ecritureValue(inputEcriture)
         i++
-        afficherProposition(listMots, i)
+        afficherProposition(listMots[i])
 
         if (listMots[i] === undefined) {
             let div = document.querySelector(".motProposition")
-            div.innerHTML = `<p> Jeu Terminé ! </p>`
+            div.innerText = ("Jeu Terminé !")
             boutonValider.disabled = true
             inputEcriture.disabled = true
         }
