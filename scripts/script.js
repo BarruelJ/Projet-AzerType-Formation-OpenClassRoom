@@ -37,6 +37,7 @@ function lancerJeu() {
             let div = document.querySelector(".motProposition")
             div.innerHTML = `<p> Jeu Terminé ! </p>`
             boutonValider.disabled = true
+            inputEcriture.disabled = true
         }
         
     })

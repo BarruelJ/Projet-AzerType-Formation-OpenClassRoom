@@ -1,3 +1,141 @@
+:root {
+
+    --color-primary: #5D5E60;
+    --color-secondary: #8D8D92;
+    --color-accent: #BEB2C8;
+    --color-bg: #D7D6D6;
+}
+
+button {
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: var(--color-secondary);
+    color: var(--color-bg);
+}
+
+button:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+button:disabled {
+    background-color: var(--color-secondary);
+    cursor: default;
+    opacity: 0.7;
+}
+
+button:disabled:hover {
+    background-color: var(--color-secondary);
+    cursor: default;
+    transform: none;
+    box-shadow: none;
+}
+
 body {
-    background-color: black;
+
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2, span, p {
+
+    color: var(--color-primary);
+}
+
+h1 {
+
+    font-size: 62px;
+}
+
+h2 {
+
+    font-size: 42px;
+}
+
+span {
+
+    font-size: 24px;
+}
+
+p {
+
+    font-size: 24px;
+}
+header {
+
+    justify-content: center;
+    text-align: center;
+
+}
+
+main {
+
+    display: block;
+    width: 50%;
+    margin-top: 80px;
+    text-align: center;
+    background-color: var(--color-accent);
+    padding: 20px 80px 20px 80px;
+    border-radius: 25px;
+}
+
+.motProposition {
+
+    background-color: white;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 20px 0px 20px 0px;   
+}
+
+.motProposition p {
+
+    margin: 0;
+}
+
+#promptJeu {
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.reponseUser {
+     
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+
+    font-size: 1rem;
+    padding: 0.6rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 100%; 
+    box-sizing: border-box;
+    color: var(--color-primary);
+    margin-right: 15px;
+}
+
+input:focus {
+    border-color: var(--color-accent); 
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+input:disabled {
+
+    background-color: #f3f4f6;
+    cursor: not-allowed;
+    opacity: 0.7;
+    cursor: default;
 }
