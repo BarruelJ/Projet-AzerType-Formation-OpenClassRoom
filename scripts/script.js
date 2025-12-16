@@ -8,7 +8,7 @@ function afficherResultat(score, total) {
 function ecritureValue (input) {
 
     console.log(input.value)
-    input.value = ""
+    // input.value = "" //Dans le corrigé, le clear de l'input est intégrer dans le if.
 }
 
 function afficherProposition(proposition) {
@@ -29,14 +29,15 @@ function lancerJeu() {
     boutonValider.addEventListener("click", () => {
         ecritureValue(inputEcriture)
         i++
-        afficherProposition(listMots[i])
-
+        inputEcriture.value = ''
+        
         if (listMots[i] === undefined) {
             let div = document.querySelector(".motProposition")
             div.innerText = ("Jeu Terminé !")
             boutonValider.disabled = true
             inputEcriture.disabled = true
-        }
+        } else {
+        afficherProposition(listMots[i])}
         
     })
     afficherResultat(score, total)
