@@ -5,6 +5,12 @@ function afficherResultat(score, total) {
     div.innerText = affichageScore
 }
 
+function ecritureValue (input) {
+
+    console.log(input.value)
+    input.value = ""
+}
+
 
 function lancerJeu() {
 
@@ -12,11 +18,17 @@ function lancerJeu() {
     let score = 0
     let total = 0
 
+    let inputEcriture = document.getElementById("inputEcriture")
+    inputEcriture.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            ecritureValue(inputEcriture)
+
+        }
+    })
+
     let boutonValider = document.querySelector(".reponseUser button")
     boutonValider.addEventListener("click", () => {
-        console.log(inputEcriture.value)
+        ecritureValue(inputEcriture)
     })
     afficherResultat(score, total)
 }
-
-let inputEcriture = document.getElementById("inputEcriture")
