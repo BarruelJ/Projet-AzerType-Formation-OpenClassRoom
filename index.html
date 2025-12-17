@@ -21,11 +21,21 @@
 
     <main>
         <div id="choixList">
-            <p> Choisissez votre option et tapez la proposition qui s'affiche dans le champ en-dessous.
-            </p>
-            <div class="btnChoix">
 
-            </div>
+            <p>Choisissez votre Jeu : </p>
+            <p>liste de mots ou liste de phrases</p>
+
+            <div class="inputChoix">
+                <label for="mots" class="btnRadio">
+                <input type="radio" id="mots" name="choix" value="mots">
+                <span>Liste de mots</span>
+                </label>
+                <label for="phrases" class="btnRadio">
+                <input type="radio" id="phrases" name="choix" value="phrases">
+                <span>Liste de phrases</span>
+                </label>
+            </div>  
+
         </div>
 
         <div id="promptJeu">
