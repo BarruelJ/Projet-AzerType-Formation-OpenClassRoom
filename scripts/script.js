@@ -5,11 +5,25 @@ function afficherResultat(score, total) {
     div.innerText = affichageScore
 }
 
-function ecritureValue (input) {
+function ecritureValue(input) {
 
     return input.value
     // input.value = "" //Dans le corrigé, le clear de l'input est intégrer dans le if.
 }
+
+function choixProposition () {
+    
+    const radio = document.querySelectorAll('input[name=choix]')
+    let btnRadio = ""
+    for (let i =0; i < radio.length; i++) {
+        if (radio[i].checked) {
+            btnRadio = radio[i].value
+            break
+        } 
+    } 
+    console.log(btnRadio)
+}
+
 
 function afficherProposition(proposition) {
 
@@ -45,12 +59,9 @@ function lancerJeu() {
         } else {
         afficherProposition(listMots[i])}
 
-
-        
-        
     })
     
-    afficherResultat(score, i)
+    afficherResultat(score, i)   
 }
 
 
