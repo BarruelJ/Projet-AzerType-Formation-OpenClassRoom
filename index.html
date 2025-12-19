@@ -8,6 +8,7 @@
     <script src="scripts/config.js" defer></script>
     <script src="scripts/script.js" defer></script>
     <script src="scripts/main.js" defer></script>
+    <script src="scripts/popup.js" defer></script>
     <link rel="stylesheet" href="style.css">
     
 </head>
@@ -63,6 +64,24 @@
 
 
     </footer>
+
+    <!-- Popup Partager -->
+
+    <div class="popupBackground">
+        <div class="popup">
+            <h2>Partagez votre score</h2>
+            <form>
+                <label for="nom">Votre nom</label>
+                <input type="text" name="nom" id="nom" placeholder="Votre nom" minlength="2">
+                <label for="email">Avec qui voulez-vous partager votre score ?</label>
+                <input type="email" name="email" id="email" placeholder="nom@domaine.com">
+                <button id="btnEnvoyerEmail">Envoyer</button>
+                <button id="btnRetour">Retour</button>
+            </form>
+        </div>
+
+    </div>
+
 </body>
 
 </html>
