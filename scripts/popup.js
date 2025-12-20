@@ -5,6 +5,7 @@ const inputNom = document.getElementById ("nom")
 const inputEmail = document.getElementById ("email")
 const form = document.querySelector ("form")
 const main = document.querySelector("main")
+const overlay = document.getElementById("overlay")
 let popup = document.querySelector (".popupBackground")
 
 
@@ -15,7 +16,8 @@ form.addEventListener("submit", (event) => {
 
 btnPartager.addEventListener("click", () => {
     popup.classList.add('active')
-    main.style.display = "none"
+    main.style.opacity = "0.5"
+    overlay.classList.add('active')
 })
 
 btnEnvoyer.addEventListener("click", () => {
@@ -52,7 +54,8 @@ btnEnvoyer.addEventListener("click", () => {
         console.log(inputNom.value)
         console.log(inputEmail.value)
         popup.classList.remove('active')
-        main.style.display = "block"
+        main.style.opacity = "1"
+        overlay.classList.remove('active')
     }
 
 
@@ -61,7 +64,17 @@ btnEnvoyer.addEventListener("click", () => {
 btnRetour.addEventListener ("click", ()=> {
     
     popup.classList.remove('active')
-    main.style.display = "block"
+    main.style.opacity = "1"
+    overlay.classList.remove('active')
 
 })
+
+overlay.addEventListener ("click", () => {
+
+    popup.classList.remove('active')
+    main.style.opacity = "1"
+    overlay.classList.remove('active')
+
+} )
+
 

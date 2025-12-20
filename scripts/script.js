@@ -18,28 +18,35 @@ function afficherProposition(proposition) {
     div.innerText = proposition
 }
 
-function resetJeu () {
-
-                i = 0;
-                score = 0;
-                inputEcriture.value = '';
-                boutonValider.disabled = false;
-                inputEcriture.disabled = false;
-}
 
 
 function lancerJeu() {
-
+    
+    function resetJeu() {
+       
+        i = 0
+        score = 0
+        inputEcriture.value = ''
+        
+        boutonValider.disabled = false
+        inputEcriture.disabled = false
+        btnPartager.disabled = true
+        radio.forEach(element => element.disabled = false)
+        
+        afficherProposition(listeProposition[i])
+        afficherResultat(score, i)
+    }
 
     let i = 0
     let score = 0
     let inputEcriture = document.getElementById("inputEcriture")
     let listeProposition = listMots
     const btnPartager = document.querySelector (".btnPartager button")
-    const btnRetour = document.getElementById ("btnRetour")
+    const btnReset = document.getElementById ("reset")
+    
 
     btnPartager.disabled = true
-    
+    btnReset.disabled = true
     
     afficherProposition(listeProposition[i])
     
@@ -64,6 +71,9 @@ function lancerJeu() {
             boutonValider.disabled = true
             inputEcriture.disabled = true
             btnPartager.disabled = false
+            btnReset.disabled = false
+            radio.forEach(element => element.disabled = true)
+
 
         } else {
             afficherProposition(listeProposition[i])}
@@ -88,6 +98,11 @@ function lancerJeu() {
                  afficherProposition(listeProposition[i])
             })
         }
+
+        btnReset.addEventListener ("click", () => {
+
+            resetJeu()
+        })
           
     afficherResultat(score, i)   
 }

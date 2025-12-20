@@ -45,9 +45,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
 }
 
-h1, h2, span, p {
+h1, h2, h3, h4, span, p {
 
     color: var(--color-primary);
 }
@@ -60,6 +61,15 @@ h1 {
 h2 {
 
     font-size: 42px;
+}
+
+h3 {
+
+    font-size: 32px;
+}
+
+h4 {
+    font-size: 18px;
 }
 
 span {
@@ -81,6 +91,7 @@ header {
 main {
 
     display: block;
+    opacity: 1;
     width: 45%;
     margin-top: 80px;
     text-align: center;
@@ -163,25 +174,36 @@ input:disabled {
 .popupBackground {
 
     position: fixed;
-    top: 40%;
-    left: 50;
+    top: 50%;
+    left: 50%;
     z-index: 9999;
-    display: none;
-    width: 50%;
+    display: flex;
+    opacity: 0;
+    width: 35;
     text-align: center;
     justify-content: center;
     background-color: var(--color-accent);
     border-radius: 25px;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translate(-50%, -30%) scale(0.95);
 }
 
 .popup {
 
-    padding: 20px 20px;
+    padding: 10px 10px;
+}
+
+.popup h3 {
+
+    margin: 16px 0px;
 }
 
 .popupBackground.active {
 
-    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .popup form {
@@ -193,9 +215,9 @@ input:disabled {
 
 .popup form label {
 
-    font-size: 24px;
+    font-size: 20px;
     color: var(--color-primary);
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 
 .popup form input {
@@ -206,7 +228,7 @@ input:disabled {
     border-radius: 6px;
     outline: none;
     transition: all 0.3s ease;
-    width: 100%; 
+    width: 80%; 
     box-sizing: border-box;
     margin-bottom: 16px;
 }
@@ -220,4 +242,34 @@ input:disabled {
 
     margin-bottom: 16px;
     width: 30%;
+}
+
+footer {
+
+    margin-top: 80px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    background-color:var(--color-accent);
+    text-align: center;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* transparence */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+#overlay.active {
+
+    pointer-events: auto;
+    opacity: 1;
 }
